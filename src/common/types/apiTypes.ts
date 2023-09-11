@@ -85,3 +85,4 @@ export type Dialogs = {
   "newMessagesCount": number
   "photos": Photos
 }
+

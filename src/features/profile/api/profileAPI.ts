@@ -18,6 +18,3 @@ export const profileAPI = {
     return instance.put<BaseResponse>('profile/photo', photo)
   }
 }
-
-
-//https://social-network.samuraijs.com/api/1.0/profile/status/29800

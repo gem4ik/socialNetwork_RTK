@@ -1,19 +1,18 @@
 import React, { useEffect } from "react"
-import { dialogsAPI } from "features/dialogs/api/dialogsAPI"
+import { Login } from "features/auth/ui/Login"
+import { Users } from "features/users/ui/Users"
 
 function App() {
 
-  useEffect(()=>{
-    dialogsAPI.sortByData(27035, '2023-09-10T17:25:10.323')
-      .then(res => {
-        console.log(res)
-      })
-  },[])
+  useEffect(() => {
 
+  }, [])
 
   return (
     <div>
-      ng
+      <Login />
+      ---------------------------------------------------
+      <Users />
     </div>
   )
 }
