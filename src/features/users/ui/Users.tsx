@@ -54,26 +54,26 @@ export const Users = () => {
         total={totalUsersCount} />
       <div className={s.usersWrapper}>
         {users.map(u => {
+          const avatarImage = u.photos.large || u.photos.small ? <img
+                className={s.avatar}
+                src={`${u.photos.large ? u.photos.large : u.photos.small}`}
+                alt="avatar" /> :
+              <Avatar
+                style={{borderRadius: 0, width: 300, height: 'auto'}}
+                src="https://xsgames.co/randomusers/avatar.php?g=pixel" />
           return (
             <Card
-              style={{ width: 300, height: "max-content", backgroundColor: "#148ec0" }}
-              actions={[
-                <Button
-                  key="subscription"
-                  onClick={() => subscribeHandler(u.id, u.followed)}
-                  type="primary">
-                  {!u.followed ? "Follow" : "Unfollow"}
-                </Button>
-              ]}
+              hoverable
+              style={{ width: 300, backgroundColor: "#148ec0" }}
+              cover={avatarImage}
             >
-              <Meta avatar={u.photos.large || u.photos.small ? <img
-                  className={s.avatar}
-                  src={`${u.photos.large ? u.photos.large : u.photos.small}`}
-                  alt="avatar" /> :
-                <Avatar src="https://xsgames.co/randomusers/avatar.php?g=pixel" />}
-                    title={u.name}
-                    description={u.status}
-              />
+              <Meta title={u.name} description={u.status} />
+              <Button
+                key="subscription"
+                onClick={() => subscribeHandler(u.id, u.followed)}
+                type="primary">
+                {!u.followed ? "Follow" : "Unfollow"}
+              </Button>
             </Card>
           )
         })}
