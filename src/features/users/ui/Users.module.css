@@ -1,0 +1,13 @@
+.zaglushkaUser{
+    width: 100px;
+}
+.avatar {
+    background-color: #148ec0;
+    width: 100px;
+}
+
+.usersWrapper {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
