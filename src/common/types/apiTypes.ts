@@ -14,6 +14,7 @@ export type Photos = {
   "small": null | string,
   "large": null | string
 }
+
 export type User = {
   "followed": boolean
   "id": number

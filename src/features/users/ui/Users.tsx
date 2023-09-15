@@ -37,11 +37,11 @@ export const Users = () => {
     }
   }
   const onShowSizeChange = (current: number, pageSize: number) => {
-    setParams({...params, page: current, count: pageSize});
+    setParams({ ...params, page: current, count: pageSize })
   }
 
   const onPageChange = (page: number, pageSize: number) => {
-    setParams({...params, page, count: pageSize});
+    setParams({ ...params, page, count: pageSize })
   }
 
   return (
@@ -55,12 +55,12 @@ export const Users = () => {
       <div className={s.usersWrapper}>
         {users.map(u => {
           const avatarImage = u.photos.large || u.photos.small ? <img
-                className={s.avatar}
-                src={`${u.photos.large ? u.photos.large : u.photos.small}`}
-                alt="avatar" /> :
-              <Avatar
-                style={{borderRadius: 0, width: 300, height: 'auto'}}
-                src="https://xsgames.co/randomusers/avatar.php?g=pixel" />
+              className={s.avatar}
+              src={`${u.photos.large ? u.photos.large : u.photos.small}`}
+              alt="avatar" /> :
+            <Avatar
+              style={{ borderRadius: 0, width: 300, height: "auto" }}
+              src="https://xsgames.co/randomusers/avatar.php?g=pixel" />
           return (
             <Card
               hoverable
